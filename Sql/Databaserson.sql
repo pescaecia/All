@@ -29,6 +29,10 @@ login varchar(30),
 senha varchar(30)
 );
 
-
+create table publicacaoAdm(adm_id int, foreign key (id) references administrador(id),
+id int primary key auto_increment,
+titulo varchar(50) NOT NULL,
+conteudo varchar(250) NOT NULL, 
+);
 
 
