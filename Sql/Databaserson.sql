@@ -14,7 +14,6 @@ conteudo varchar(250) NOT NULL
 );
 
 
-
 create table mensagens(
 id int primary key auto_increment,
 id_session integer references usuario(id),
