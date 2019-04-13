@@ -22,7 +22,7 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Home 1</a>
+                            <a href="Cadastro.php">cadastro1</a>
                         </li>
                         <li>
                             <a href="#">Home 2</a>
