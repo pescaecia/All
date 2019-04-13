@@ -1,3 +1,3 @@
 <?php
 
-$jorje = mysqli_connect(localhost, root, "", Databaserson, 3306);
+$jorje = mysqli_connect("Leticia", "root", "", "Databaserson", "3306");
