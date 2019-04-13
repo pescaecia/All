@@ -17,7 +17,7 @@ conteudo varchar(250) NOT NULL
 create table mensagens(
 id int primary key auto_increment,
 id_session integer references usuario(id),
-id_recebedor integer references usuario(id),
+id_recebedor integer references usuario(id)
 );
 
 create table comentarios(
@@ -27,7 +27,8 @@ usuario_id integer references usuario(id),
 comentario varchar(50)
 );
 
-create table administrador(id int primary key auto_increment,
+create table administrador(
+id int primary key auto_increment,
 login varchar(30),
 senha varchar(30)
 );
