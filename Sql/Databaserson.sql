@@ -13,11 +13,12 @@ titulo varchar(50) NOT NULL,
 conteudo varchar(250) NOT NULL 
 );
 
+
+
 create table mensagens(
 id int primary key auto_increment,
 id_session integer references usuario(id),
 id_recebedor integer references usuario(id),
-conteudo varchar(200)
 );
 
 create table comentarios(
