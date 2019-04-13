@@ -6,21 +6,24 @@ senha varchar(20) NOT NULL,
 email varchar(30) NOT NULL Unique
 );
 
-create table puclicacao(usuario_id int, foreign key (id) references usuario(id),
+create table publicacao(
 id int primary key auto_increment,
+usuario_id integer references usuario(id),
 titulo varchar(50) NOT NULL,
-conteudo varchar(250) NOT NULL, 
+conteudo varchar(250) NOT NULL 
 );
 
-create table mensagens(id int primary auto_increment,
-id_session int, foreign key (id) references usuario(id),
-id_recebedor int, foreign key (id) references usuario(id),
+create table mensagens(
+id int primary key auto_increment,
+id_session integer references usuario(id),
+id_recebedor integer references usuario(id),
 conteudo varchar(200)
 );
 
-create table comentarios(id int primary key auto_increment,
-puclicacao_id int, foreign key (id) references publicacao(id),
-usuario_id int, foreign key (id) references usuario(id),
+create table comentarios(
+id int primary key auto_increment,
+puclicacao_id integer  references publicacao(id),
+usuario_id integer references usuario(id),
 comentario varchar(50)
 );
 
@@ -29,10 +32,12 @@ login varchar(30),
 senha varchar(30)
 );
 
-create table publicacaoAdm(adm_id int, foreign key (id) references administrador(id),
+create table publicacaoAdm(
+adm_id integer references administrador(id),
 id int primary key auto_increment,
 titulo varchar(50) NOT NULL,
-conteudo varchar(250) NOT NULL, 
+conteudo varchar(250) NOT NULL
 );
 
 
+drop table comentarios;
