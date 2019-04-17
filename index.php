@@ -56,7 +56,7 @@
                     </div>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
-    Launch demo modal
+    Login
 </button>
 
         <div id="ModalLoginForm" class="modal fade">
