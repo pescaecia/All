@@ -1,3 +1,17 @@
+<?PHP 
+  include"sql/Conexao.php";
+    if(Count($_POST) > 0){
+        $nome = $_POST['username'];
+        $login = $_POST['login'];
+        $senha = $_POST['password'];
+        $email = $_POST['email'];
+    
+         $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
+         
+         mysqli_query($conector, $consultor);
+    }
+   ?>
+
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -114,21 +128,34 @@
  <div class="container">
         <div class="row">
             <div class="span12" style="text-align:center; margin: 0 auto;">
-                <form class="form-horizontal" style="width: 400px; margin: 0 auto;" method="post" action="/form/">
+                <form class="form-horizontal" style="width: 400px; margin: 0 auto;" method="post" action="#">
                     <fieldset>
                         <legend>Please login</legend>
                         <div class="control-group">
-                            <label class="control-label" for="id_username">Username</label>
+                            <label class="control-label" for="id_username">nome</label>
                             <div class="controls">
-                                <input name="username" maxlength="100" placeholder="Enter your username..." type="text" class="input-large" id="id_username" />
+                                <input name="username" maxlength="100" required="" placeholder="Enter your username..." type="text" class="input-large" id="id_username" />
+                            </div>
+                        </div>
+                         <div class="control-group">
+                            <label class="control-label" for="id_login">login</label>
+                            <div class="controls">
+                                <input name="login" maxlength="100" required="" placeholder="Enter your login..." type="text" class="input-large" id="id_login" />
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="id_password">Password</label>
                             <div class="controls">
-                                <input name="password" maxlength="100" placeholder="Enter your password..." type="password" class="input-large" id="id_password" />
+                                <input name="password" maxlength="100" required="" placeholder="Enter your password..." type="password" class="input-large" id="id_password" />
                             </div>
                         </div>
+                         <div class="control-group">
+                            <label class="control-label" for="id_email">email</label>
+                            <div class="controls">
+                                <input name="email" maxlength="100" required="" placeholder="Enter your email..." type="email" class="input-large" id="id_email" />
+                            </div>
+                        </div>
+                        <input type="submit" value="CONFIRMAR" name="confirmar"> 
                     </fieldset>
                 </form>
             </div>
