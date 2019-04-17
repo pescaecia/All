@@ -49,7 +49,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="Cadastrar.php">Cadastrar</a>
+                                    <a class="nav-link" href="Cadastro/Cadastrar.php">Cadastrar</a>
                                 </li>
                             </ul>
                         </div>
