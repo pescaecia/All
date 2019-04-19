@@ -14,7 +14,7 @@ $retorno = mysqli_query($conector, $query);
                     <div id="imagem">
                         <img src="">
                     </div>
-                    <h3 id="nome"><?= $_SESSION['login'] ?> </h3>
+                    <h3 id="nome"><?= $_SESSION['login'] ?></h3>
                     <h3 id="lvl">Lvl: big boss</h3>
                 </div>
                 <ul class="list-unstyled components">
