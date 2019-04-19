@@ -7,8 +7,13 @@
         $email = $_POST['email'];
     
          $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
-         echo $consultor;
-         mysqli_query($conector, $consultor);
+
+         if(mysqli_query($conector, $consultor)){
+             echo("<script type='text/javascript'> alert('Cadastro realizado com sucesso!'
+            );</script>");
+         } else {
+             echo ("<script type='text/javascript'> alert('Cadastro nao realizado');</script>");
+         }
          
     }
         

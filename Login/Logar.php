@@ -1,11 +1,11 @@
 <?php
 include './Autenticacao.php';
 include '../Sql/Conexao.php';
+
 ini_set("display_errors", true);
+
 $username = $_POST['login'];
 $password = $_POST['senha'];
-echo $username;
-echo $password;
 function getLogin($conector,$sql){
     $retorno = mysqli_query($conector,$sql);
     $resultado = mysqli_fetch_array($retorno);
@@ -22,7 +22,7 @@ if($result != Null){
 $result = getLogin($conector, "select * from usuario where login = '$username' and senha = '$password'");
 echo $result;
 if($result != Null){
-    logar($result['username'], $result['id'], "C");
+    logar($result['username'], $result['id'], "U");
     header('Location: ../Redirecionar.php');
     die();
 }
