@@ -67,11 +67,11 @@
             </div>
             <div class="modal-body">
                 <form role="form" method="POST" action="Login/Logar.php">
-                    <input type="hidden" name="_token" value="">
+                
                     <div class="form-group">
                         <label class="control-label">Username</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="login" value="">
+                            <input type="text" class="form-control input-lg" name="login">
                         </div>
                     </div>
                     <div class="form-group">

@@ -1,24 +1,28 @@
 <?php
-include 'Autenticacao.php';
+include './Autenticacao.php';
 include '../Sql/Conexao.php';
-
+ini_set("display_errors", true);
 $username = $_POST['login'];
 $password = $_POST['senha'];
-
-function Login($conector,$sql){
-    $retorno = mysqli_query($conector, $sql);
+echo $username;
+echo $password;
+function getLogin($conector,$sql){
+    $retorno = mysqli_query($conector,$sql);
     $resultado = mysqli_fetch_array($retorno);
     return $resultado;
 }
-$result = Login($conector, "SELECT * FROM administrador WHERE login = '$username' and senha ='$password'");
-if ($result != NULL ){
-    logar($result['login'], $result['id'],"A");
+ 
+$result = getLogin($conector, "select * from administrador where login = '$username' and senha = '$password'");
+echo $result;
+if($result != Null){
+    logar($result['username'], $result['id'], "A");
     header('Location: ../Redirecionar.php');
     die();
 }
-$result = Login($conector,"SELECT * FROM usuario WHERE login = '$username' AND senha = '$password'");
-if($result != NULL){
-    logar($result['login'],$result['id'],"U");
+$result = getLogin($conector, "select * from usuario where login = '$username' and senha = '$password'");
+echo $result;
+if($result != Null){
+    logar($result['username'], $result['id'], "C");
     header('Location: ../Redirecionar.php');
-      die();
+    die();
 }

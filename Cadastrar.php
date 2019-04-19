@@ -87,7 +87,7 @@
                 <h1 class="modal-title">Login</h1>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" action="logar/logar.php">
+                <form role="form" method="POST" action="Login/Logar.php">
                     <input type="hidden" name="_token" value="">
                     <div class="form-group">
                         <label class="control-label">Username</label>
