@@ -1,12 +1,10 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-        <title>Pesca inicial</title>
-        <link rel="stylesheet" type="text/css" href="../EstiloEtc.css">
+<?php
 
-    </head>
+$id = $_SESSION['id'];
+$query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
+$retorno = mysqli_query($conector, $query);
+
+?>
     <body>
 
         <div class="wrapper">
@@ -16,7 +14,7 @@
                     <div id="imagem">
                         <img src="">
                     </div>
-                    <h3 id="nome">Nome</h3>
+                    <h3 id="nome"><?= $_SESSION['login'] ?> </h3>
                     <h3 id="lvl">Lvl: big boss</h3>
                 </div>
                 <ul class="list-unstyled components">
