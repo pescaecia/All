@@ -168,7 +168,16 @@ a.article:hover {
     }
 }
 
-/* ---------------------------------------------------
-    Cadastrar.php
------------------------------------------------------ */
-
+#imagem {
+    border: 0.5pt solid black;
+    background-color: #ddd;
+    border-radius: 100px;
+    height: 100px;
+}
+#nome {
+    margin-top: 10px; 
+    font-size: 15px;
+}
+#lvl {
+    font-size: 14px;
+}

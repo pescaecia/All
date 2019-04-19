@@ -2,7 +2,7 @@
 include './Login/Autenticacao.php';
 
     IF(isMyType('A')){
-        echo "homem vinizo fodase";
+        header("Location: menu/menuAdm.php");
     }
     IF(isMyType('U')){
         echo "Vinizo gado";
