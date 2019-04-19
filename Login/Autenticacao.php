@@ -2,9 +2,10 @@
 
 session_start();
 
-function logar ($login, $senha){
+function logar ($login, $senha,$tipo){
     $_SESSION["login"] = $login;
     $_SESSION["senha"] = $senha;
+    $_SESSION['tipo'] = $tipo;
     iniciarTempoSessao();
 }
 
@@ -42,4 +43,7 @@ function exibirUsername() {
 
 function iniciarTempoSessao(){
     $_SESSION["tempo"] = time();
+}
+function isMyType($type){
+    return $type == $_SESSION['tipo'];
 }

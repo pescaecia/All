@@ -7,9 +7,9 @@
         $email = $_POST['email'];
     
          $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
-         
+         echo $consultor;
          mysqli_query($conector, $consultor);
-       //  
+         
     }
         
    ?>
@@ -92,7 +92,7 @@
                     <div class="form-group">
                         <label class="control-label">Username</label>
                         <div>
-                            <input type="email" class="form-control input-lg" name="login" value="">
+                            <input type="text" class="form-control input-lg" name="login" value="">
                         </div>
                     </div>
                     <div class="form-group">
