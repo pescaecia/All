@@ -5,6 +5,30 @@ $query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
 $retorno = mysqli_query($conector, $query);
 
 ?>
+<style type="text/css">
+    #imagem {
+    border: 5pt solid black;
+    border-color: #002752;
+    background-color: #10707f;
+    border-radius: 100px;
+    height: 100px;
+}
+#nome {
+    margin-top: 10px; 
+    font-size: 15px;
+}
+#lvl {
+    font-size: 14px;
+}
+#olá{
+    text-align: center;
+    top: 50px;
+}
+
+    
+    
+    
+</style>
     <body>
 
         <div class="wrapper">
@@ -101,14 +125,17 @@ $retorno = mysqli_query($conector, $query);
                         </div>
                     </div>
                 </form>
-               
+            </div>
+        </div>
+    </div>
+        </div>
+                </nav>
+                <h1 id="olá">OLÁ</h1>
                         </div>
                     </div>
-                </form>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+
+
+
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -122,7 +149,7 @@ $retorno = mysqli_query($conector, $query);
                 });
             });
         </script>
-        <div>Demasiadamente bovino</div>
+        
 </html>
 <?php
 

@@ -8,11 +8,11 @@
 <?php
 include 'Login/Autenticacao.php';
 include 'Sql/Conexao.php';
-
+if (estaLogado()){
     If(isMyType('A')){
-        include './menu/menuAdm.php';
+        include 'menu/menuAdm.php';
     }
-
+}
 ;
     IF(isMyType('U')){
         echo "Vinizo gado";
