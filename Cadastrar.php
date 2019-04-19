@@ -9,7 +9,7 @@
          $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
          
          mysqli_query($conector, $consultor);
-       //  echo $conector;
+       //  
     }
         
    ?>
