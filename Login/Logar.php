@@ -1,5 +1,5 @@
 <?php
-include './Autenticacao.php';
+include 'Autenticacao.php';
 include '../Sql/Conexao.php';
 ini_set("display_errors", true);
 
