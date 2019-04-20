@@ -69,7 +69,7 @@
                 <form role="form" method="POST" action="Login/Logar.php">
                 
                     <div class="form-group">
-                        <label class="control-label">Username</label>
+                        <label class="control-label">Usuário</label>
                         <div>
                             <input type="text" class="form-control input-lg" name="login">
                         </div>
@@ -84,7 +84,7 @@
                         <div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="remember"> Remember Me
+                                    <input type="checkbox" name="remember"> Lembre de mim
                                 </label>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                         <div>
                             <button type="submit" class="btn btn-success">Login</button>
  
-                            <a class="btn btn-link" href="">Forgot Your Password?</a>
+                            <a class="btn btn-link" href="">Esqueceu a senha seu burro?</a>
                         </div>
                     </div>
                 </form>
