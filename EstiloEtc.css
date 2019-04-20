@@ -58,14 +58,14 @@ a:focus {
 
 #sidebar {
     min-width: 150px;
-    max-width: 510px;
+    max-width: 700px;
     background: #7386D5;
     color: #fff;
     transition: all 0.3s;
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -200px;
 }
 
 #sidebar .sidebar-header {

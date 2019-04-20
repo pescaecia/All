@@ -74,63 +74,16 @@ $retorno = mysqli_query($conector, $query);
                             <i class="fas fa-align-justify"></i>
                         </button>
 
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="nav navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="Cadastrar.php">Cadastrar</a>
-                                </li>
-                            </ul>
-                        </div>
+              
                     </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
-    Login
-</button>
 
-        <div id="ModalLoginForm" class="modal fade">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title">Login</h1>
-            </div>
-            <div class="modal-body">
-                <form role="form" method="POST" action="Login/Logar.php">
-                
-                    <div class="form-group">
-                        <label class="control-label">Username</label>
-                        <div>
-                            <input type="text" class="form-control input-lg" name="login">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Senha</label>
-                        <div>
-                            <input type="password" class="form-control input-lg" name="senha">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember"> Remember Me
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <button type="submit" class="btn btn-success">Login</button>
- 
-                            <a class="btn btn-link" href="">Forgot Your Password?</a>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
         </div>
                 </nav>
-                <h1 id="olá">OLÁ</h1>
+                <h1 id="olá">HELLO WORLD</h1>
                         </div>
                     </div>
 
