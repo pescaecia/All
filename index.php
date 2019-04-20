@@ -13,7 +13,7 @@
             <!-- Sidebar  -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3><a href="index.php">Inicio</a></h3>
+                    <h3><a href="http://localhost/All/index.php">Inicio</a></h3>
                 </div>
 
                 <ul class="list-unstyled components">
@@ -49,7 +49,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="Cadastrar.php">Cadastrar</a>
+                                    <a class="nav-link" href="http://localhost/All/Cadastrar.php">Cadastrar</a>
                                 </li>
                             </ul>
                         </div>
@@ -100,15 +100,12 @@
                
                         </div>
                     </div>
-                </form>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-                    </div>
-                </div>
-     
+               
 
 
 

@@ -3,7 +3,6 @@
 $id = $_SESSION['id'];
 $query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
 $retorno = mysqli_query($conector, $query);
-
 ?>
 <style type="text/css">
     #imagem {
@@ -74,7 +73,13 @@ $retorno = mysqli_query($conector, $query);
                             <i class="fas fa-align-justify"></i>
                         </button>
 
-              
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="http://localhost/All/Login/logout.php">Sair</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
 

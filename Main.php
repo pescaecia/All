@@ -5,16 +5,17 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
         <title>Pesca inicial</title>
         <link rel="stylesheet" type="text/css" href="EstiloEtc.css">
-<?php
-include 'Login/Autenticacao.php';
-include 'Sql/Conexao.php';
-if (estaLogado()){
-    If(isMyType('A')){
-        include 'menu/menuAdm.php';
-    }
-}
-;
-    IF(isMyType('U')){
-        echo "Vinizo gado";
-    }
+        <?php
+        include 'Login/Autenticacao.php';
+        include 'Sql/Conexao.php';
+
+        if (estaLogado()) {
+            If (isMyType('A')) {
+                include 'menu/menuAdm.php';
+            }
+        }
+        ;
+        IF (isMyType('U')) {
+            echo "Vinizo gado";
+        }
     
