@@ -95,7 +95,7 @@
                 <form role="form" method="POST" action="Login/Logar.php">
                     <input type="hidden" name="_token" value="">
                     <div class="form-group">
-                        <label class="control-label">Username</label>
+                        <label class="control-label">Usuário</label>
                         <div>
                             <input type="text" class="form-control input-lg" name="login" value="">
                         </div>
@@ -110,7 +110,7 @@
                         <div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="remember"> Remember Me
+                                    <input type="checkbox" name="remember"> Lembrar de mim
                                 </label>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                         <div>
                             <button type="submit" class="btn btn-success">Login</button>
  
-                            <a class="btn btn-link" href="">Forgot Your Password?</a>
+                            <a class="btn btn-link" href="">Esqueceu a senha?</a>
                         </div>
                     </div>
                 </form>
@@ -139,27 +139,27 @@
                     <fieldset>
                         <legend>Please login</legend>
                         <div class="control-group">
-                            <label class="control-label" for="id_username">nome</label>
+                            <label class="control-label" for="id_username">Nome</label>
                             <div class="controls">
-                                <input name="username" maxlength="100" required="" placeholder="Enter your username..." type="text" class="input-large" id="id_username" />
+                                <input name="username" maxlength="100" required="" placeholder="Escreva seu nome..." type="text" class="input-large" id="id_username" />
                             </div>
                         </div>
                          <div class="control-group">
-                            <label class="control-label" for="id_login">login</label>
+                            <label class="control-label" for="id_login">Usuário</label>
                             <div class="controls">
-                                <input name="login" maxlength="100" required="" placeholder="Enter your login..." type="text" class="input-large" id="id_login" />
+                                <input name="login" maxlength="100" required="" placeholder="Escreva seu usuário..." type="text" class="input-large" id="id_login" />
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="id_password">Password</label>
+                            <label class="control-label" for="id_password">Senha</label>
                             <div class="controls">
-                                <input name="password" maxlength="100" required="" placeholder="Enter your password..." type="password" class="input-large" id="id_password" />
+                                <input name="password" maxlength="100" required="" placeholder="Escreva sua senha..." type="password" class="input-large" id="id_password" />
                             </div>
                         </div>
                          <div class="control-group">
-                            <label class="control-label" for="id_email">email</label>
+                            <label class="control-label" for="id_email">E-mail</label>
                             <div class="controls">
-                                <input name="email" maxlength="100" required="" placeholder="Enter your email..." type="email" class="input-large" id="id_email" />
+                                <input name="email" maxlength="100" required="" placeholder="Escreva seu e-mail..." type="email" class="input-large" id="id_email" />
                             </div>
                         </div>
                         <input type="submit" value="CONFIRMAR" name="confirmar"> 

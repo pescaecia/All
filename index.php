@@ -93,7 +93,7 @@
                         <div>
                             <button type="submit" class="btn btn-success">Login</button>
  
-                            <a class="btn btn-link" href="">Esqueceu a senha seu burro?</a>
+                            <a class="btn btn-link" href="">Esqueceu a senha?</a>
                         </div>
                     </div>
                 </form>
