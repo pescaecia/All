@@ -63,7 +63,7 @@ a:focus {
     color: #fff;
     transition: all 0.3s;
 }
-
+//o engolidor da pagina
 #sidebar.active {
     margin-left: -200px;
 }

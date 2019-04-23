@@ -1,8 +1,9 @@
 <?php
 
 $id = $_SESSION['id'];
+//seleciona tudo do usuario onde o ID for igual o da seção
 $query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
-$retorno = mysqli_query($conector, $query);
+
 ?>
 <style type="text/css">
     #imagem {
@@ -56,6 +57,9 @@ $retorno = mysqli_query($conector, $query);
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                    <li>
+                        <a href="http://localhost/All/publicacao/publicacaoAdm.php">Publicar</a>
+                    </li>
                 </ul>
 
             </nav>
@@ -88,7 +92,7 @@ $retorno = mysqli_query($conector, $query);
     </div>
         </div>
                 </nav>
-                <h1 id="olá">HELLO WORLD</h1>
+                
                         </div>
                     </div>
 
