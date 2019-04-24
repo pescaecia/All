@@ -1,3 +1,15 @@
+<?php
+require_once '../Login/Autenticacao.php';
+require_once '../Sql/Conexao.php';
+
+$id = $_SESSION['id'];
+//seleciona tudo do usuario onde o ID for igual o da seção
+$query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
+mysqli_query($conector, $query);
+
+
+
+?>
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -12,6 +24,11 @@
         <div class="wrapper">
             <!-- Sidebar  -->
             <nav id="sidebar">
+                 <div id="imagem">
+                        <img src="">
+                    </div>
+                    <h3 id="nome"><?= $_SESSION['login'] ?></h3>
+                    <h3 id="lvl">Lvl: big boss</h3>
                 <div class="sidebar-header">
                     <h3><a href="http://localhost/All/index.php">Inicio</a></h3>
                 </div>
