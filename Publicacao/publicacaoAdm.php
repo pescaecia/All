@@ -29,10 +29,6 @@ mysqli_query($conector, $query);
                     </div>
                     <h3 id="nome"><?= $_SESSION['login'] ?></h3>
                     <h3 id="lvl">Lvl: big boss</h3>
-                <div class="sidebar-header">
-                    <h3><a href="http://localhost/All/index.php">Inicio</a></h3>
-                </div>
-
                 <ul class="list-unstyled components">
                     <li>
                         <a href="#">Forum</a>
@@ -59,66 +55,30 @@ mysqli_query($conector, $query);
                             <i class="fas fa-align-left"></i>
                             <span>Menu</span>
                         </button>
-                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-align-justify"></i>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    </div>
+                    
+                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="http://localhost/All/Cadastrar.php">Cadastrar</a>
+                                    <a class="nav-link" href="http://localhost/All/Login/logout.php">Sair</a>
                                 </li>
                             </ul>
                         </div>
-                    </div>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
-    Login
-</button>
-
-        <div id="ModalLoginForm" class="modal fade">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title">Login</h1>
-            </div>
-            <div class="modal-body">
-                <form role="form" method="POST" action="Login/Logar.php">
-                
-                    <div class="form-group">
-                        <label class="control-label">Usuário</label>
-                        <div>
-                            <input type="text" class="form-control input-lg" name="login">
+                </nav>
+                <div>
+                    <form method="file" action="">  
+                        <div class="col-sm-9">
+                            
+                            <label>Titulo:</label>
+                            <input type="text" class="form-control">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Senha</label>
-                        <div>
-                            <input type="password" class="form-control input-lg" name="senha">
+                        </br>
+                        <div class="col-sm-10">
+                            <label>Conteudo: </label>
+                            <textarea class="form-control textoarea" rows="12"></textarea>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember"> Lembre de mim
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <button type="submit" class="btn btn-success">Login</button>
- 
-                            <a class="btn btn-link" href="">Esqueceu a senha?</a>
-                        </div>
-                    </div>
-                </form>
-               
-                        </div>
-                    </div>
-            </div>
-        </div><!-- /.modal-content -->
+                    </form>
+                </div>
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
