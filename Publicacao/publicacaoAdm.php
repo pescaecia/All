@@ -1,4 +1,5 @@
 <?php
+//requisita a pagina indicada uma vez e FORÇA A PUXA OS NEGOCIO DA PAGINA, no caso é o session_start().
 require_once '../Login/Autenticacao.php';
 require_once '../Sql/Conexao.php';
 
@@ -24,11 +25,13 @@ mysqli_query($conector, $query);
         <div class="wrapper">
             <!-- Sidebar  -->
             <nav id="sidebar">
-                 <div id="imagem">
+                <div class="sidebar-header">
+                    <div id="imagem">
                         <img src="">
                     </div>
                     <h3 id="nome"><?= $_SESSION['login'] ?></h3>
                     <h3 id="lvl">Lvl: big boss</h3>
+                </div>
                 <ul class="list-unstyled components">
                     <li>
                         <a href="#">Forum</a>
@@ -66,16 +69,20 @@ mysqli_query($conector, $query);
                         </div>
                 </nav>
                 <div>
-                    <form method="file" action="">  
+                    <form method="file" action="" enctype="multipart/form-data">  
                         <div class="col-sm-9">
                             
                             <label>Titulo:</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="titulo" class="form-control">
                         </div>
                         </br>
                         <div class="col-sm-10">
                             <label>Conteudo: </label>
-                            <textarea class="form-control textoarea" rows="12"></textarea>
+                            <textarea class="form-control textoarea" name="conteudo" rows="12"></textarea>
+                        </div>
+                        </br>
+                        <div class="col-sm-10 botao">
+                        <button type="file" class="btn btn-dark">Confirmar</button>
                         </div>
                     </form>
                 </div>

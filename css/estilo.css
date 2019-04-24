@@ -169,7 +169,7 @@ a.article:hover {
 }
 
 #imagem {
-    border: 5pt solid black;
+    border: 4pt solid black;
     border-color: #002752;
     background-color: #10707f;
     border-radius: 100px;
@@ -182,3 +182,4 @@ a.article:hover {
 #lvl {
     font-size: 14px;
 }
+
