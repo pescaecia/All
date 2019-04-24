@@ -6,7 +6,7 @@ $query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
 mysqli_query($conector, $query);
 
 ?>
-<link rel="stylesheet" type="text/css" href="EstiloEtc.css">
+<link rel="stylesheet" type="text/css" href="http://localhost/All/css/estilo.css">
     
     
     
