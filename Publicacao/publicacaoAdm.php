@@ -69,7 +69,7 @@ mysqli_query($conector, $query);
                         </div>
                 </nav>
                 <div>
-                    <form method="file" action="" enctype="multipart/form-data">  
+                    <form method="post" action="insertPublicacao.php" enctype="multipart/form-data">  
                         <div class="col-sm-9">
                             
                             <label>Titulo:</label>
