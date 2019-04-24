@@ -3,32 +3,14 @@
 $id = $_SESSION['id'];
 //seleciona tudo do usuario onde o ID for igual o da seção
 $query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
+mysqli_query($conector, $query);
 
 ?>
-<style type="text/css">
-    #imagem {
-    border: 5pt solid black;
-    border-color: #002752;
-    background-color: #10707f;
-    border-radius: 100px;
-    height: 100px;
-}
-#nome {
-    margin-top: 10px; 
-    font-size: 15px;
-}
-#lvl {
-    font-size: 14px;
-}
-#olá{
-    text-align: center;
-    top: 50px;
-}
+<link rel="stylesheet" type="text/css" href="EstiloEtc.css">
+    
+    
+    
 
-    
-    
-    
-</style>
     <body>
 
         <div class="wrapper">

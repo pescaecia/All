@@ -6,16 +6,17 @@
         <title>Pesca inicial</title>
         <link rel="stylesheet" type="text/css" href="EstiloEtc.css">
         <?php
-        include 'Login/Autenticacao.php';
-        include 'Sql/Conexao.php';
+    require_once 'Sql/Conexao.php';
+     require_once 'Login/Autenticacao.php';
 
         if (estaLogado()) {
             If (isMyType('A')) {
                 include 'menu/menuAdm.php';
             }
-        }
-        ;
-        IF (isMyType('U')) {
+                     IF (isMyType('U')) {
             echo "Vinizo gado";
         }
+        }
+       
+        
     
