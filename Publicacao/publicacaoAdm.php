@@ -1,24 +1,3 @@
-<?PHP 
-  include"sql/Conexao.php";
-    if(Count($_POST) > 0){
-        $nome = $_POST['username'];
-        $login = $_POST['login'];
-        $senha = $_POST['password'];
-        $email = $_POST['email'];
-    
-         $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
-
-         if(mysqli_query($conector, $consultor)){
-             echo("<script type='text/javascript'> alert('Cadastro realizado com sucesso!'
-            );</script>");
-         } else {
-             echo ("<script type='text/javascript'> alert('Cadastro nao realizado');</script>");
-         }
-         
-    }
-        
-   ?>
-
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -29,13 +8,12 @@
 
     </head>
     <body>
-        
 
         <div class="wrapper">
             <!-- Sidebar  -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3><a href="index.php">Inicio</a></h3>
+                    <h3><a href="http://localhost/All/index.php">Inicio</a></h3>
                 </div>
 
                 <ul class="list-unstyled components">
@@ -54,10 +32,8 @@
                 </ul>
 
             </nav>
-            
+
             <div id="content">
-                
-              
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
@@ -73,13 +49,11 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="Cadastrar.php">Cadastrar</a>
+                                    <a class="nav-link" href="http://localhost/All/Cadastrar.php">Cadastrar</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    
-                    
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
     Login
@@ -93,11 +67,11 @@
             </div>
             <div class="modal-body">
                 <form role="form" method="POST" action="Login/Logar.php">
-                    <input type="hidden" name="_token" value="">
+                
                     <div class="form-group">
                         <label class="control-label">Usuário</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="login" value="">
+                            <input type="text" class="form-control input-lg" name="login">
                         </div>
                     </div>
                     <div class="form-group">
@@ -110,7 +84,7 @@
                         <div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="remember"> Lembrar de mim
+                                    <input type="checkbox" name="remember"> Lembre de mim
                                 </label>
                             </div>
                         </div>
@@ -124,52 +98,17 @@
                     </div>
                 </form>
                
-                
                         </div>
                     </div>
-              
             </div>
         </div><!-- /.modal-content -->
-                </nav>
-  
- <div class="container">
-        <div class="row">
-            <div class="span12" style="text-align:center; margin: 0 auto;">
-                <form class="form-horizontal" style="width: 400px; margin: 0 auto;" method="post" action="#">
-                    <fieldset>
-                        <legend>Please login</legend>
-                        <div class="control-group">
-                            <label class="control-label" for="id_username">Nome</label>
-                            <div class="controls">
-                                <input name="username" maxlength="100" required="" placeholder="Escreva seu nome..." type="text" class="input-large" id="id_username" />
-                            </div>
-                        </div>
-                         <div class="control-group">
-                            <label class="control-label" for="id_login">Usuário</label>
-                            <div class="controls">
-                                <input name="login" maxlength="100" required="" placeholder="Escreva seu usuário..." type="text" class="input-large" id="id_login" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="id_password">Senha</label>
-                            <div class="controls">
-                                <input name="password" maxlength="100" required="" placeholder="Escreva sua senha..." type="password" class="input-large" id="id_password" />
-                            </div>
-                        </div>
-                         <div class="control-group">
-                            <label class="control-label" for="id_email">E-mail</label>
-                            <div class="controls">
-                                <input name="email" maxlength="100" required="" placeholder="Escreva seu e-mail..." type="email" class="input-large" id="id_email" />
-                            </div>
-                        </div>
-                        <input type="submit" value="CONFIRMAR" name="confirmar"> 
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </div>
-      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+               
+
+
+
 
 
 
@@ -185,5 +124,5 @@
             });
         </script>
 
-
+    </div>
 </html>

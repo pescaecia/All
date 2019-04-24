@@ -28,7 +28,7 @@ mysqli_query($conector, $query);
                         <a href="#">Inicio</a>
                     </li>
                     <li>
-                        <a href="#">Forum</a>
+                        <a href="http://localhost/All/Publicacao/publicacaoAdm.php">Publicação</a>
                     </li>
                     <li>
                         <a href="#pageSubmenu">Amizades Virtuais</a>
@@ -39,9 +39,7 @@ mysqli_query($conector, $query);
                     <li>
                         <a href="#">Contact</a>
                     </li>
-                    <li>
-                        <a href="http://localhost/All/publicacao/publicacaoAdm.php">Publicar</a>
-                    </li>
+                
                 </ul>
 
             </nav>
