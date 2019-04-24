@@ -16,7 +16,10 @@
                      IF (isMyType('U')) {
             echo "Vinizo gado";
         }
+        }Else{
+            echo 'conectar';
+            
+            
         }
-       
         
     
