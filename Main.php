@@ -13,7 +13,7 @@
             If (isMyType('A')) {
                 include 'menu/menuAdm.php';
             }
-                     IF (isMyType('U')) {
+           IF (isMyType('U')) {
             echo "Vinizo gado";
         }
         }Else{

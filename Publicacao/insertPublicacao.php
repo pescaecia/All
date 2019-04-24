@@ -8,15 +8,11 @@
  $img = $_FILES["imagem"]["name"];
  $id = $_SESSION["id"];
  
- $querry = "insert into publicacaoAdm values($id, default, '$titulo', '$conteudo')";
-            //variavel de conecção, e o conector....
- mysqli_query($conector, $querry);
- echo $querry;
  
  //UP = upload
  $_UP["pasta"] = "../img/";
  $_UP["tamanho"] = 1024*1024*100;
- $_UP["extensoes"] = array('png', 'jpeg', 'gif');
+ $_UP["extensoes"] = array('png','jpg', 'jpeg', 'gif');
  $_UP['erros'][0] = 'Não houve erro';
  $_UP['erros'][1] = 'O arquivo no upload é maior do que o limite do PHP';
  $_UP['erros'][2] = 'O arquivo ultrapassa o limite de tamanho especifiado no HTML';
