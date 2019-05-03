@@ -22,4 +22,6 @@
  
  if($_FILES["imagem"]["error"] !== 0){
      die("Não foi possível fazer o upload, erro:" . $_UP['erros'][$_FILES['arquivo']['error']]);
+     
+     ECHO 'HITLER É LEGAL';
  }
