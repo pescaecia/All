@@ -6,7 +6,17 @@
         $senha = $_POST['password'];
         $email = $_POST['email'];
     
-         $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
+        $select = 'select login from usuario;';
+        
+        $query = mysqli_query($conector, $select);
+        
+        $row = mysqli_num_rows($query);
+        
+        if($row >= 1){
+            echo "homem vinizo fodas";
+        }
+        
+        $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
 
          if(mysqli_query($conector, $consultor)){
              echo("<script type='text/javascript'> alert('Cadastro realizado com sucesso!'

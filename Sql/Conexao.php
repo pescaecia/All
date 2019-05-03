@@ -1,3 +1,3 @@
 <?php
 
-$conector = mysqli_connect("localhost", "root", "", "rubenz", "3306");
+$conector = mysqli_connect("localhost", "root", "", "leticia", "3306");
