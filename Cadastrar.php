@@ -6,10 +6,8 @@
         $senha = $_POST['password'];
         $email = $_POST['email'];
     
-        $select = 'select login from usuario;';
-        
-        $query = mysqli_query($conector, $select);
-        
+        $select = "select login from usuario where login = '$login'";
+        $query = mysqli_query($conector, $select); 
         $row = mysqli_num_rows($query);
         
         if($row >= 1){
