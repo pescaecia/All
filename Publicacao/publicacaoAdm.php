@@ -82,7 +82,7 @@ mysqli_query($conector, $query);
                         </div>
                         </br>
                         <div class="col-sm-10 botao">
-                        <button type="file" class="btn btn-dark">Confirmar</button>
+                            <input type="file" name="imagem" class="botao" value="Selecione uma imagem">
                         </div>
                     </form>
                 </div>

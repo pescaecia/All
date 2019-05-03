@@ -1,31 +1,29 @@
-<?PHP 
-  include"sql/Conexao.php";
-    if(Count($_POST) > 0){
-        $nome = $_POST['username'];
-        $login = $_POST['login'];
-        $senha = $_POST['password'];
-        $email = $_POST['email'];
-    
-        $select = "select login from usuario where login = '$login'";
-        $query = mysqli_query($conector, $select); 
-        $row = mysqli_num_rows($query);
-        
-        if($row >= 1){
-            echo "homem vinizo fodas";
-        }
-        
-        $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
+<?PHP
+include"sql/Conexao.php";
+if (Count($_POST) > 0) {
+    $nome = $_POST['username'];
+    $login = $_POST['login'];
+    $senha = $_POST['password'];
+    $email = $_POST['email'];
 
-         if(mysqli_query($conector, $consultor)){
-             echo("<script type='text/javascript'> alert('Cadastro realizado com sucesso!'
-            );</script>");
-         } else {
-             echo ("<script type='text/javascript'> alert('Cadastro nao realizado');</script>");
-         }
-         
-    }
+    $select = "select login from usuario where login = '$login'";
+    $query = mysqli_query($conector, $select);
+    $row = mysqli_num_rows($query);
+
+    if ($row >= 1) {
         
-   ?>
+    }
+
+    $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
+
+    if (mysqli_query($conector, $consultor)) {
+        echo("<script type='text/javascript'> alert('Cadastro realizado com sucesso!'
+            );</script>");
+    } else {
+        echo ("<script type='text/javascript'> alert('Cadastro nao realizado');</script>");
+    }
+}
+?>
 
 <html>
     <head>
@@ -37,7 +35,7 @@
 
     </head>
     <body>
-        
+
 
         <div class="wrapper">
             <!-- Sidebar  -->
@@ -62,10 +60,10 @@
                 </ul>
 
             </nav>
-            
+
             <div id="content">
-                
-              
+
+
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
@@ -86,98 +84,98 @@
                             </ul>
                         </div>
                     </div>
-                    
-                    
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
-    Login
-</button>
 
-        <div id="ModalLoginForm" class="modal fade">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title">Login</h1>
-            </div>
-            <div class="modal-body">
-                <form role="form" method="POST" action="Login/Logar.php">
-                    <input type="hidden" name="_token" value="">
-                    <div class="form-group">
-                        <label class="control-label">Usuário</label>
-                        <div>
-                            <input type="text" class="form-control input-lg" name="login" value="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Senha</label>
-                        <div>
-                            <input type="password" class="form-control input-lg" name="senha">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember"> Lembrar de mim
-                                </label>
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
+                        Login
+                    </button>
+
+                    <div id="ModalLoginForm" class="modal fade">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title">Login</h1>
+                                </div>
+                                <div class="modal-body">
+                                    <form role="form" method="POST" action="Login/Logar.php">
+                                        <input type="hidden" name="_token" value="">
+                                        <div class="form-group">
+                                            <label class="control-label">Usuário</label>
+                                            <div>
+                                                <input type="text" class="form-control input-lg" name="login" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Senha</label>
+                                            <div>
+                                                <input type="password" class="form-control input-lg" name="senha">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="remember"> Lembrar de mim
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <button type="submit" class="btn btn-success">Login</button>
+
+                                                <a class="btn btn-link" href="">Esqueceu a senha?</a>
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+                                </div>
                             </div>
+
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <button type="submit" class="btn btn-success">Login</button>
- 
-                            <a class="btn btn-link" href="">Esqueceu a senha?</a>
-                        </div>
-                    </div>
-                </form>
-               
-                
-                        </div>
-                    </div>
-              
-            </div>
-        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-content -->
                 </nav>
-  
- <div class="container">
-        <div class="row">
-            <div class="span12" style="text-align:center; margin: 0 auto;">
-                <form class="form-horizontal" style="width: 400px; margin: 0 auto;" method="post" action="#">
-                    <fieldset>
-                        <legend>Please login</legend>
-                        <div class="control-group">
-                            <label class="control-label" for="id_username">Nome</label>
-                            <div class="controls">
-                                <input name="username" maxlength="100" required="" placeholder="Escreva seu nome..." type="text" class="input-large" id="id_username" />
-                            </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="span12" style="text-align:center; margin: 0 auto;">
+                            <form class="form-horizontal" style="width: 400px; margin: 0 auto;" method="post" action="#">
+                                <fieldset>
+                                    <legend>Please login</legend>
+                                    <div class="control-group">
+                                        <label class="control-label" for="id_username">Nome</label>
+                                        <div class="controls">
+                                            <input name="username" maxlength="100" required="" placeholder="Escreva seu nome..." type="text" class="input-large" id="id_username" />
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="id_login">Usuário</label>
+                                        <div class="controls">
+                                            <input name="login" maxlength="100" required="" placeholder="Escreva seu usuário..." type="text" class="input-large" id="id_login" />
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="id_password">Senha</label>
+                                        <div class="controls">
+                                            <input name="password" maxlength="100" required="" placeholder="Escreva sua senha..." type="password" class="input-large" id="id_password" />
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="id_email">E-mail</label>
+                                        <div class="controls">
+                                            <input name="email" maxlength="100" required="" placeholder="Escreva seu e-mail..." type="email" class="input-large" id="id_email" />
+                                        </div>
+                                    </div>
+                                    <input type="submit" value="CONFIRMAR" name="confirmar"> 
+                                </fieldset>
+                            </form>
                         </div>
-                         <div class="control-group">
-                            <label class="control-label" for="id_login">Usuário</label>
-                            <div class="controls">
-                                <input name="login" maxlength="100" required="" placeholder="Escreva seu usuário..." type="text" class="input-large" id="id_login" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="id_password">Senha</label>
-                            <div class="controls">
-                                <input name="password" maxlength="100" required="" placeholder="Escreva sua senha..." type="password" class="input-large" id="id_password" />
-                            </div>
-                        </div>
-                         <div class="control-group">
-                            <label class="control-label" for="id_email">E-mail</label>
-                            <div class="controls">
-                                <input name="email" maxlength="100" required="" placeholder="Escreva seu e-mail..." type="email" class="input-large" id="id_email" />
-                            </div>
-                        </div>
-                        <input type="submit" value="CONFIRMAR" name="confirmar"> 
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </div>
-      </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+                    </div>
+                </div>
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
 
 
