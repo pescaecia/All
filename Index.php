@@ -1,23 +1,11 @@
-<?php
-//requisita a pagina indicada uma vez e FORÇA A PUXA OS NEGOCIO DA PAGINA, no caso é o session_start().
-require_once '../Login/Autenticacao.php';
-require_once '../Sql/Conexao.php';
 
-$id = $_SESSION['id'];
-//seleciona tudo do usuario onde o ID for igual o da seção
-$query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
-mysqli_query($conector, $query);
-
-
-
-?>
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
         <title>Pesca inicial</title>
-        <link rel="stylesheet" type="text/css" href="http://localhost/All/css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
 
     </head>
     <body>
@@ -26,12 +14,9 @@ mysqli_query($conector, $query);
             <!-- Sidebar  -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <div id="imagem">
-                        <img src="">
-                    </div>
-                    <h3 id="nome"><?= $_SESSION['login'] ?></h3>
-                    <h3 id="lvl">Lvl: big boss</h3>
+                    <h3><a href="http://localhost/All/Index">Inicio</a></h3>
                 </div>
+
                 <ul class="list-unstyled components">
                     <li>
                         <a href="#">Forum</a>
@@ -48,6 +33,7 @@ mysqli_query($conector, $query);
                 </ul>
 
             </nav>
+    
 
             <div id="content">
 
@@ -58,35 +44,67 @@ mysqli_query($conector, $query);
                             <i class="fas fa-align-left"></i>
                             <span>Menu</span>
                         </button>
-                    </div>
-                    
-                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-align-justify"></i>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="http://localhost/All/Login/logout.php">Sair</a>
+                                    <a class="nav-link" href="http://localhost/All/Cadastrar">Cadastrar</a>
                                 </li>
                             </ul>
                         </div>
-                </nav>
-                <div>
-                    <form method="post" action="insertPublicacao.php" enctype="multipart/form-data">  
-                        <div class="col-sm-9">
-                            
-                            <label>Titulo:</label>
-                            <input type="text" name="titulo" class="form-control">
+                    </div>
+   
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
+    Login
+</button>
+             </nav>
+        <div id="ModalLoginForm" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Login</h1>
+            </div>
+            <div class="modal-body">
+                <form role="form" method="POST" action="Login/Logar.php">
+                
+                    <div class="form-group">
+                        <label class="control-label">Usuário</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="login">
                         </div>
-                        </br>
-                        <div class="col-sm-10">
-                            <label>Conteudo: </label>
-                            <textarea class="form-control textoarea" name="conteudo" rows="12"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Senha</label>
+                        <div>
+                            <input type="password" class="form-control input-lg" name="senha">
                         </div>
-                        </br>
-                        <div class="col-sm-10 botao">
-                            <input type="file" name="imagem" class="botao" value="Selecione uma imagem">
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember"> Lembre de mim
+                                </label>
+                            </div>
                         </div>
-                        <input type="submit" value="TESTE">
-                    </form>
-                </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button type="submit" class="btn btn-success">Login</button>
+ 
+                            <a class="btn btn-link" href="">Esqueceu a senha?</a>
+                        </div>
+                    </div>
+                </form>
+               
+                        </div>
+                    </div>
+            </div>
+        </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 

@@ -16,13 +16,13 @@ function getLogin($conector,$sql){
 $result = getLogin($conector, "select * from administrador where login = '$username' and senha = '$password'");
 if($result != Null){
     logar($result['login'], $result['id'], "A");
-    header('Location: ../Main.php');
+    header('Location: ../Main');
     die();
 }
 $result = getLogin($conector, "select * from usuario where login = '$username' and senha = '$password'");
 if($result != Null){
     logar($result['login'], $result['id'], "U");
-    header('Location: ../Main.php');
+    header('Location: ../Main');
     die();
 }
   $result = getLogin($conector, "select * from administrador where login = '$username' and senha = '$password'");

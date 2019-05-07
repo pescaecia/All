@@ -41,7 +41,7 @@ if (Count($_POST) > 0) {
             <!-- Sidebar  -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3><a href="index.php">Inicio</a></h3>
+                    <h3><a href="http://localhost/All/Index">Inicio</a></h3>
                 </div>
 
                 <ul class="list-unstyled components">
@@ -79,7 +79,7 @@ if (Count($_POST) > 0) {
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="Cadastrar.php">Cadastrar</a>
+                                    <a class="nav-link" href="http://localhost/All/Cadastrar">Cadastrar</a>
                                 </li>
                             </ul>
                         </div>
