@@ -1,4 +1,9 @@
-
+<?php
+    include 'Sql/Conexao.php';
+    
+    $select = 'select * from publicacaoAdm';
+    $query = mysqli_query($conector, $select);
+?>
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -28,12 +33,11 @@
                         <a href="#">E dando dicas</a>
                     </li>
                     <li>
-                        <a href="#">Bom dia</a>
+                        <a href="#">Contact</a>
                     </li>
                 </ul>
 
             </nav>
-
 
             <div id="content">
 
@@ -56,58 +60,69 @@
                             </ul>
                         </div>
                     </div>
+                    
 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
+    Login
+</button>
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
-                        Login
-                    </button>
-                </nav>
-                <div id="ModalLoginForm" class="modal fade">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title">Login</h1>
-                            </div>
-                            <div class="modal-body">
-                                <form role="form" method="POST" action="Login/Logar.php">
-
-                                    <div class="form-group">
-                                        <label class="control-label">Usuário</label>
-                                        <div>
-                                            <input type="text" class="form-control input-lg" name="login">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Senha</label>
-                                        <div>
-                                            <input type="password" class="form-control input-lg" name="senha">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" name="remember"> Lembre de mim
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div>
-                                            <button type="submit" class="btn btn-success">Login</button>
-
-                                            <a class="btn btn-link" href="">Esqueceu a senha?</a>
-                                        </div>
-                                    </div>
-                                </form>
-
+        <div id="ModalLoginForm" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Login</h1>
+            </div>
+            <div class="modal-body">
+                <form role="form" method="POST" action="Login/Logar.php">
+                
+                    <div class="form-group">
+                        <label class="control-label">Usuário</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="login">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Senha</label>
+                        <div>
+                            <input type="password" class="form-control input-lg" name="senha">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember"> Lembre de mim
+                                </label>
                             </div>
                         </div>
                     </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
+                    <div class="form-group">
+                        <div>
+                            <button type="submit" class="btn btn-success">Login</button>
+ 
+                            <a class="btn btn-link" href="">Esqueceu a senha?</a>
+                        </div>
+                    </div>
+                </form>
+               
+                        </div>
+                    </div>
+            </div>
+        </div><!-- /.modal-content --> 
+        </nav>
+                <?php
+                
+                    while($tabela = mysqli_fetch_array($query)){
+                        $id = $tabela['id'];
+                        $titulo = $tabela['titulo'];
+                        $conteudo = $tabela['conteudo'];
+                        $img = $tabela['img'];
+                        
+                        echo $id." ".$titulo." ".$conteudo." ".$img;
+                    }
+                ?>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 
