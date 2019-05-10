@@ -111,15 +111,34 @@
         </div><!-- /.modal-content --> 
         </nav>
                 <?php
-                
                     while($tabela = mysqli_fetch_array($query)){
                         $id = $tabela['id'];
                         $titulo = $tabela['titulo'];
                         $conteudo = $tabela['conteudo'];
                         $img = $tabela['img'];
-                        
-                        echo $id." ".$titulo." ".$conteudo." ".$img;
-                    }
+               
+                        echo "<div class='container bg-light shadow rounded publicacao'>"
+                            ."<div class='row p-3'>"
+                                ."<div class='col'>"
+                                    ."<div class='row p-2'>"
+                                        ."<div class='col shadow-sm rounded'>"
+                                            ."$titulo"
+                                        ."</div>"
+                                    ."</div>"
+                                    ."<div class='row p-2'>"
+                                       ."<div class='col shadow-sm rounded'>"
+                                            ."$conteudo"
+                                        ."</div>"
+                                    ."</div>"
+                                    ."<div class='row p-2'>"
+                                        ."<div class='col d-flex justify-content-center'>"
+                                            ."<img class='img-flui' src='Img/$img'>"
+                                        ."</div>"
+                                    ."</div>"
+                                ."</div>"
+                            ."</div>"
+                        ."</div>";
+                        }
                 ?>
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
