@@ -2,5 +2,7 @@ RewriteEngine On
  
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
- 
-RewriteRule . Index.php [L]
+
+
+
+RewriteRule  ^deletarPublicacao-([0-9]+)$  deletarPublicacao?id=$1

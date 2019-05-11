@@ -85,7 +85,7 @@ mysqli_query($conector, $query);
                                 ."<i class='fa fa-bars'></i>"
                                 ."</button>"
                                 ."<div class='dropdown-menu'>"
-                                ."<a href='http://localhost/All/menu/deletarPublicacao? acao=".$id."' class='dropdown-item'>Deletar</a>"
+                                ."<a href='menu/deletarPublicacao-$id' class='dropdown-item'>Deletar</a>"
                                 ."<a href='#' class='dropdown-item'>Alterar</a>"
                                 . "</div>"
                                 . "</div>"
