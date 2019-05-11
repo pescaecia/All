@@ -34,6 +34,9 @@ mysqli_query($conector, $query);
                 </div>
                 <ul class="list-unstyled components">
                     <li>
+                        <a href="../Main">Inicio</a>
+                    </li>
+                    <li>
                         <a href="#">Forum</a>
                     </li>
                     <li>
@@ -68,7 +71,7 @@ mysqli_query($conector, $query);
                             </ul>
                         </div>
                 </nav>
-                <div>
+                <div class="shadow-sm">
                     <form method="post" action="insertPublicacao.php" enctype="multipart/form-data">  
                         <div class="col-sm-9">
                             
@@ -82,9 +85,9 @@ mysqli_query($conector, $query);
                         </div>
                         </br>
                         <div class="col-sm-10 botao">
-                            <input type="file" name="imagem" class="botao" value="Selecione uma imagem">
+                            <input type="file" name="imagem" value="Selecione uma imagem">
                         </div>
-                        <input type="submit" value="TESTE">
+                        <input type="submit" class="btn btn-dark my-2 mx-5" value="Publicar">
                     </form>
                 </div>
     </div><!-- /.modal-dialog -->

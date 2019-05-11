@@ -117,7 +117,7 @@
                         $conteudo = $tabela['conteudo'];
                         $img = $tabela['img'];
                
-                        echo "<div class='container bg-light shadow rounded publicacao'>"
+                        echo "<div class='container bg-light shadow rounded my-5 publicacao'>"
                             ."<div class='row p-3'>"
                                 ."<div class='col'>"
                                     ."<div class='row p-2'>"
@@ -132,7 +132,7 @@
                                     ."</div>"
                                     ."<div class='row p-2'>"
                                         ."<div class='col d-flex justify-content-center'>"
-                                            ."<img class='img-flui' src='Img/$img'>"
+                                            ."<img class='img-fluid' src='img/$img'>"
                                         ."</div>"
                                     ."</div>"
                                 ."</div>"

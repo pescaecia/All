@@ -5,6 +5,10 @@ $id = $_SESSION['id'];
 $query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
 mysqli_query($conector, $query);
 
+    include 'Sql/Conexao.php';
+    
+    $select = 'select * from publicacaoAdm';
+    $query = mysqli_query($conector, $select);
 ?>
 <link rel="stylesheet" type="text/css" href="http://localhost/All/css/estilo.css">
     
@@ -25,7 +29,7 @@ mysqli_query($conector, $query);
                 </div>
                 <ul class="list-unstyled components">
                     <li>
-                        <a href="#">Inicio</a>
+                        <a href="http://localhost/All/menu/inicioAdm">Inicio</a>
                     </li>
                     <li>
                         <a href="http://localhost/All/Publicacao/publicacaoAdm">Publicação</a>
@@ -65,16 +69,49 @@ mysqli_query($conector, $query);
                             </ul>
                         </div>
                     </div>
-
-
+                </nav>
+                  <?php
+                    while($tabela = mysqli_fetch_array($query)){
+                        $id = $tabela['id'];
+                        $titulo = $tabela['titulo'];
+                        $conteudo = $tabela['conteudo'];
+                        $img = $tabela['img'];
+               
+                        echo "<div class='container bg-light shadow rounded publicacao my-5'>"
+                            ."<div class='row p-3'>"
+                                ."<div class='col'>"
+                                ."<div class'dropdown'>"
+                                ."<button class='btn btn-dark dropdown-toggle' data-toggle='dropdown' type='button'>"
+                                ."<i class='fa fa-bars'></i>"
+                                ."</button>"
+                                ."<div class='dropdown-menu'>"
+                                ."<a href='http://localhost/All/menu/deletarPublicacao? acao=".$id."' class='dropdown-item'>Deletar</a>"
+                                ."<a href='#' class='dropdown-item'>Alterar</a>"
+                                . "</div>"
+                                . "</div>"
+                                    ."<div class='row p-2'>"
+                                        ."<div class='col shadow-sm rounded'>"
+                                            ."$titulo"
+                                        ."</div>"
+                                    ."</div>"
+                                    ."<div class='row p-2'>"
+                                       ."<div class='col shadow-sm rounded'>"
+                                            ."$conteudo"
+                                        ."</div>"
+                                    ."</div>"
+                                    ."<div class='row p-2'>"
+                                        ."<div class='col d-flex justify-content-center'>"
+                                            ."<img class='img-fluid' src='img/$img'>"
+                                        ."</div>"
+                                    ."</div>"
+                                ."</div>"
+                            ."</div>"
+                        ."</div>";
+                        }
+                ?>
             </div>
         </div>
-    </div>
-        </div>
-                </nav>
                 
-                        </div>
-                    </div>
 
 
 

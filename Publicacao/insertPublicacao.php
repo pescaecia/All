@@ -1,4 +1,5 @@
 <?php
+ini_set("display_errors", 0 );
  require_once "../Login/Autenticacao.php";
  require_once "../Sql/Conexao.php";
  
@@ -7,7 +8,6 @@
  //a forma que se pega os uploads, tipo o post. imagem é o treco do formulario, e nome é tipo um nome temporario etc
  $img = $_FILES["imagem"]["name"];
  $id = $_SESSION["id"];
- 
  
  //UP = upload
  $_UP["pasta"] = "../img/";
@@ -21,11 +21,12 @@
  
  if($_FILES["imagem"]["error"] !== 0){
      die("Não foi possível fazer o upload, erro:" . $_UP['erros'][$_FILES['arquivo']['error']]);
+     exit;
  }
  
  $extensao = (strtolower(end(explode('.', $_FILES['imagem']['name']))));
 if (array_search($extensao, $_UP['extensoes']) === FALSE) {
-    echo "<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/All/Publicacao/publicacaoAdm.php'>
+    echo "<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/All/Publicacao/publicacaoAdm'>
 					<script type=\"text/javascript\">
 						alert(\"A imagem não foi cadastrada extensão inválida.\");
 					</script>";
@@ -33,7 +34,7 @@ if (array_search($extensao, $_UP['extensoes']) === FALSE) {
 
 else if ($_UP['tamanho'] < $_FILES['imagem']['size']) {
     echo "
-        <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/All/Publicacao/publicacaoAdm.php'>
+        <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/All/Publicacao/publicacaoAdm'>
         <script type=\"text/javascript\">  alert(\"Arquivo muito grande.\"); </script>";
 }
 
@@ -41,10 +42,10 @@ else {
    $nome_final = "" . time() . $extensao; 
 
 
-if (move_uploaded_file($_FILES['imagem']['tmp_name'], $_UP['pasta'] . $nome_final)) {
-    mysqli_query($conector,"insert into publicacaoAdm values('$id', default, '$titulo', '$conteudo', '$img')");
+if  (move_uploaded_file($_FILES['imagem']['tmp_name'], $_UP['pasta'] . $nome_final)) {
+    mysqli_query($conector,"insert into publicacaoAdm values('$id', default, '$titulo', '$conteudo', '$nome_final')");
     
-    //echo "<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/All/Publicacao/publicacaoAdm.php'>";
+    echo "<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/All/Publicacao/publicacaoAdm'>";
     
 }
 
