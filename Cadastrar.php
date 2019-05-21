@@ -17,8 +17,12 @@ if (Count($_POST) > 0) {
     $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
 
     if (mysqli_query($conector, $consultor)) {
-        echo("<script type='text/javascript'> alert('Cadastro realizado com sucesso!'
-            );</script>");
+        
+
+            echo ("<script>
+                 window.alert('Sucesso')
+                 window.location.href='Index.php';
+                </script>");
     } else {
         echo ("<script type='text/javascript'> alert('Cadastro nao realizado');</script>");
     }
