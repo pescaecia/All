@@ -8,8 +8,8 @@ $id = $_SESSION['id'];
 $query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
 mysqli_query($conector, $query);
 
-
-
+$acao = $_REQUEST['acao'];
+$idPublicacao = $_GET['id'];
 ?>
 <html>
     <head>
@@ -72,7 +72,7 @@ mysqli_query($conector, $query);
                         </div>
                 </nav>
                 <div class="shadow-sm">
-                    <form method="post" action="insertPublicacao.php" enctype="multipart/form-data">  
+                    <form method="post" action="insertPublicacao.php?acao=<?=$acao?>&id=<?=$idPublicacao?>" enctype="multipart/form-data">  
                         <div class="col-sm-9">
                             
                             <label>Titulo:</label>

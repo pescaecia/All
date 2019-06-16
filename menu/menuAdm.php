@@ -32,7 +32,7 @@ mysqli_query($conector, $query);
                         <a href="http://localhost/All/menu/inicioAdm">Inicio</a>
                     </li>
                     <li>
-                        <a href="http://localhost/All/Publicacao/publicacaoAdm">Publicação</a>
+                        <a href="http://localhost/All/Publicacao/publicacaoAdm?acao=inserir&id=">Publicação</a>
                     </li>
                     <li>
                         <a href="#pageSubmenu">Amizades Virtuais</a>
@@ -81,12 +81,12 @@ mysqli_query($conector, $query);
                             ."<div class='row p-3'>"
                                 ."<div class='col'>"
                                 ."<div class'dropdown'>"
-                                ."<button class='btn btn-dark dropdown-toggle' data-toggle='dropdown' type='button'>"
+                                ."<button class='btn btn-dark dropdown-toggle d-flex float-right' data-toggle='dropdown' type='button'>"
                                 ."<i class='fa fa-bars'></i>"
                                 ."</button>"
                                 ."<div class='dropdown-menu'>"
-                                ."<a href='menu/deletarPublicacao-$id' class='dropdown-item'>Deletar</a>"
-                                ."<a href='#' class='dropdown-item'>Alterar</a>"
+                                ."<a href='menu/DeletarPublicacao-$id' class='dropdown-item'>Deletar</a>"
+                                ."<a href='http://localhost/All/Publicacao/publicacaoAdm?acao=alterar&id=$id' class='dropdown-item'>Alterar</a>"
                                 . "</div>"
                                 . "</div>"
                                     ."<div class='row p-2'>"
@@ -101,7 +101,7 @@ mysqli_query($conector, $query);
                                     ."</div>"
                                     ."<div class='row p-2'>"
                                         ."<div class='col d-flex justify-content-center'>"
-                                            ."<img class='img-fluid' src='img/$img'>"
+                                            ."<img class='img-fluid img-thumbnail' src='img/$img'>"
                                         ."</div>"
                                     ."</div>"
                                 ."</div>"
