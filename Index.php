@@ -1,8 +1,9 @@
 <?php
     include 'Sql/Conexao.php';
-    
-    $select = 'select * from publicacaoAdm';
-    $query = mysqli_query($conector, $select);
+    $query = $conector->prepare("SELECT * FROM publicacaoAdm");
+    $query->execute();
+ 
+  
 ?>
 <html>
     <head>
@@ -111,34 +112,31 @@
         </div><!-- /.modal-content --> 
         </nav>
                 <?php
-                    while($tabela = mysqli_fetch_array($query)){
-                        $id = $tabela['id'];
-                        $titulo = $tabela['titulo'];
-                        $conteudo = $tabela['conteudo'];
-                        $img = $tabela['img'];
+              while($row = $query->fetch()){
                
                         echo "<div class='container bg-light shadow rounded my-5 publicacao'>"
                             ."<div class='row p-3'>"
                                 ."<div class='col'>"
                                     ."<div class='row p-2'>"
                                         ."<div class='col shadow-sm rounded'>"
-                                            ."$titulo"
+                                            ." $row[titulo]"
                                         ."</div>"
                                     ."</div>"
                                     ."<div class='row p-2'>"
                                        ."<div class='col shadow-sm rounded'>"
-                                            ."$conteudo"
+                                            ."$row[conteudo]"
                                         ."</div>"
                                     ."</div>"
                                     ."<div class='row p-2'>"
                                         ."<div class='col d-flex justify-content-center'>"
-                                            ."<img class='img-fluid' src='img/$img'>"
+                                            ."<img class='img-fluid' src='img/$row[img]'>"
                                         ."</div>"
                                     ."</div>"
                                 ."</div>"
                             ."</div>"
                         ."</div>";
-                        }
+                          }
+              
                 ?>
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
