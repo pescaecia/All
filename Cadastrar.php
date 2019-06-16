@@ -1,27 +1,21 @@
 <?PHP
 include"sql/Conexao.php";
 if (Count($_POST) > 0) {
+
+    $query = $conector->prepare("INSERT INTO usuario(nome,login,senha,email) VALUES(:NOME,:LOGIN,:SENHA,:EMAIL)");
+   
     $nome = $_POST['username'];
     $login = $_POST['login'];
     $senha = $_POST['password'];
     $email = $_POST['email'];
 
-    $select = "select login from usuario where login = '$login'";
-    $query = mysqli_query($conector, $select);
-    $row = mysqli_num_rows($query);
 
-    if ($row >= 1) {
-        
-    }
-
-    $consultor = ("insert into usuario values(default, '$nome', '$login', '$senha', '$email')");
-
-    if (mysqli_query($conector, $consultor)) {
-        echo("<script type='text/javascript'> alert('Cadastro realizado com sucesso!'
-            );</script>");
-    } else {
-        echo ("<script type='text/javascript'> alert('Cadastro nao realizado');</script>");
-    }
+    $query->bindParam(":NOME", $nome);
+    $query->bindParam(":LOGIN", $login);
+    $query->bindParam(":SENHA", $senha);
+    $query->bindParam(":EMAIL", $email);
+    
+    $query->execute();
 }
 ?>
 
