@@ -80,6 +80,7 @@ mysqli_query($conector, $query);
                         echo "<div class='container bg-light shadow rounded publicacao my-5'>"
                             ."<div class='row p-3'>"
                                 ."<div class='col'>"
+                                //começa os trecos 
                                 ."<div class'dropdown'>"
                                 ."<button class='btn btn-dark dropdown-toggle d-flex float-right' data-toggle='dropdown' type='button'>"
                                 ."<i class='fa fa-bars'></i>"
@@ -104,10 +105,38 @@ mysqli_query($conector, $query);
                                             ."<img class='img-fluid img-thumbnail' src='img/$img'>"
                                         ."</div>"
                                     ."</div>"
+                                //termina os trecos
+                                    ."<div class='row'>"
+                                        ."<div class='col border border-dark'>"
+                                //Envolvedor dos comentarios
+                                            ."<div class='row'>"
+                                            ."<div class='col border border-dark'>"
+                                //envolve o comentario em si
+                                                ."<div class='col border border-dark'>"
+                                                ."</div>"
+                                //a
+                                                ."<div class='col'>"
+                                                ."</div>"
+                                //a
+                                                ."<div class='col'>"
+                                                ."</div>"
+                                //a
+                                    ."<div class='row'>"
+                                    ."<div class='col'>"
+                                        ."<form methor='post'>"
+                                        ."<textarea class='form-control textoarea' name='conteudo' rows='4'></textarea>"
+                                        . "</form>"
+                                    ."</div>"
+                                    ."</div>"        
+                                            ."</div>"
+                                            ."</div>"
+                                
+                                        ."</div>"
+                                    ."</div>"
                                 ."</div>"
                             ."</div>"
                         ."</div>";
-                        }
+                    }
                 ?>
             </div>
         </div>
