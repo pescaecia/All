@@ -1,3 +1,3 @@
 <?php
 
-$conector = new PDO("mysql:host=localhost;dbname=leticia","root","");
+$conector = mysqli_connect("localhost", "root", "", "leticia", "3306"); 

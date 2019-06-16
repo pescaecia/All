@@ -1,9 +1,7 @@
 <?php
-    include 'Sql/Conexao.php';
-    $query = $conector->prepare("SELECT * FROM publicacaoAdm");
-    $query->execute();
- 
-  
+include 'Sql/Conexao.php';
+$select = 'select * from publicacaoAdm';
+$query = mysqli_query($conector, $select);
 ?>
 <html>
     <head>
@@ -61,85 +59,88 @@
                             </ul>
                         </div>
                     </div>
-                    
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
-    Login
-</button>
 
-        <div id="ModalLoginForm" class="modal fade">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title">Login</h1>
-            </div>
-            <div class="modal-body">
-                <form role="form" method="POST" action="Login/Logar.php">
-                
-                    <div class="form-group">
-                        <label class="control-label">Usuário</label>
-                        <div>
-                            <input type="text" class="form-control input-lg" name="login">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Senha</label>
-                        <div>
-                            <input type="password" class="form-control input-lg" name="senha">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember"> Lembre de mim
-                                </label>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLoginForm">
+                        Login
+                    </button>
+
+                    <div id="ModalLoginForm" class="modal fade">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title">Login</h1>
+                                </div>
+                                <div class="modal-body">
+                                    <form role="form" method="POST" action="Login/Logar.php">
+
+                                        <div class="form-group">
+                                            <label class="control-label">Usuário</label>
+                                            <div>
+                                                <input type="text" class="form-control input-lg" name="login">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Senha</label>
+                                            <div>
+                                                <input type="password" class="form-control input-lg" name="senha">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="remember"> Lembre de mim
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <button type="submit" class="btn btn-success">Login</button>
+
+                                                <a class="btn btn-link" href="">Esqueceu a senha?</a>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <button type="submit" class="btn btn-success">Login</button>
- 
-                            <a class="btn btn-link" href="">Esqueceu a senha?</a>
-                        </div>
-                    </div>
-                </form>
-               
-                        </div>
-                    </div>
-            </div>
-        </div><!-- /.modal-content --> 
-        </nav>
-                <?php
-              while($row = $query->fetch()){
-               
-                        echo "<div class='container bg-light shadow rounded my-5 publicacao'>"
-                            ."<div class='row p-3'>"
-                                ."<div class='col'>"
-                                    ."<div class='row p-2'>"
-                                        ."<div class='col shadow-sm rounded'>"
-                                            ." $row[titulo]"
-                                        ."</div>"
-                                    ."</div>"
-                                    ."<div class='row p-2'>"
-                                       ."<div class='col shadow-sm rounded'>"
-                                            ."$row[conteudo]"
-                                        ."</div>"
-                                    ."</div>"
-                                    ."<div class='row p-2'>"
-                                        ."<div class='col d-flex justify-content-center'>"
-                                            ."<img class='img-fluid' src='img/$row[img]'>"
-                                        ."</div>"
-                                    ."</div>"
-                                ."</div>"
-                            ."</div>"
-                        ."</div>";
-                          }
-              
-                ?>
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+                    </div><!-- /.modal-content --> 
+                </nav>
+<?php
+while($tabela = mysqli_fetch_array($query)){
+                        $id = $tabela['id'];
+                        $titulo = $tabela['titulo'];
+                        $conteudo = $tabela['conteudo'];
+                        $img = $tabela['img'];
+
+    echo "<div class='container bg-light shadow rounded my-5 publicacao'>"
+    . "<div class='row p-3'>"
+    . "<div class='col'>"
+    . "<div class='row p-2'>"
+    . "<div class='col shadow-sm rounded'>"
+    . " $titulo"
+    . "</div>"
+    . "</div>"
+    . "<div class='row p-2'>"
+    . "<div class='col shadow-sm rounded'>"
+    . "$conteudo"
+    . "</div>"
+    . "</div>"
+    . "<div class='row p-2'>"
+    . "<div class='col d-flex justify-content-center'>"
+    . "<img class='img-fluid' src='img/$img'>"
+    . "</div>"
+    . "</div>"
+    . "</div>"
+    . "</div>"
+    . "</div>";
+}
+?>
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
 
 

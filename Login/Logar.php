@@ -2,11 +2,8 @@
 include 'Autenticacao.php';
 include '../Sql/Conexao.php';
 ini_set("display_errors", true);
-
 $username = $_POST['login'];
 $password = $_POST['senha'];
-
-
 function getLogin($conector,$sql){
     $retorno = mysqli_query($conector,$sql);
     $resultado = mysqli_fetch_array($retorno);

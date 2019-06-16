@@ -17,7 +17,7 @@
             echo "Vinizo gado";
         }
         }Else{
-            echo 'conectar';
+            echo 'conectarsdadsasdaasd';
             
             
         }

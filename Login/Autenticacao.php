@@ -2,7 +2,7 @@
 session_start();
 
 function logar ($login, $id,$tipo){
-    $_SESSION["login"] = $login;
+    $_SESSION['login'] = $login;
     $_SESSION['id'] = $id;
     $_SESSION['tipo'] = $tipo;
     iniciarTempoSessao();
